@@ -1,0 +1,48 @@
+			🏟️Prompt para estudar TLS  com o gpt🏟️
+			
+	🏳️‍🌈 SITE PARA CONSULTA 🏳️‍🌈  🚩
+https://aws.amazon.com/pt/what-is/ssl-certificate/
+
+https://www.cloudflare.com/pt-br/learning/ssl/how-does-ssl-work/
+
+
+	TLS (Transport Layer Security) essencial para estabelecer conexões seguras e confiáveis na internet, especialmente os protocolos HTTPS (HTTP sobre TLS/SSL). Eles garantem a confidencialidade, a integridade e a autenticidade dos dados transmitidos entre um cliente e um servidor. (como um site)
+
+🚩 Principais Funções do TLS: 🚩
+
+- Criptografia: O TLS criptografa os dados transmitidos entre o cliente e o servidor, tornando-os ilegíveis para terceiros que possam interceptar a comunicação. Isso garante a confidencialidade.
+- Autenticação: O TLS permite que o cliente verifique a identidade do servidor. Através dos certificados digitais, o cliente pode ter certeza de que está se comunicando com o servidor legítimo e não com um impostor. Isso garante a autenticidade.
+- Integridade: O TLS inclui mecanismos para detectar qualquer alteração nos dados durante a transmissão. Se os dados forem adulterados, o cliente e o servidor serão capazes de identificar a manipulação. Isso garante a integridade.
+Como o TLS Funciona (Handshake TLS):
+
+🚩 Conexão segura via TLS envolve um processo chamado "handshake TLS". Simplificadamente, as etapas principais são:
+
+- Handshake TLS
+	As sessões de comunicação TLS começam com um handshake TLS. Um handshake TLS usa algo chamado criptografia de chave pública, o que significa que duas chaves diferentes são usadas nas duas pontas da conversa. Isto é possível devido a uma técnica chamada criptografia de chave pública.Na criptografia de chave pública, são utilizadas duas chaves: uma chave pública, que o servidor disponibiliza publicamente, e uma chave privada, que é mantida em segredo e utilizada apenas no lado do servidor. Os dados criptografados com a chave pública só podem ser descriptografados com a chave privada.
+
+- Autenticação do servidor de origem
+	As comunicações TLS do servidor incluem um código de autenticação de mensagem, ou MAC, que é uma assinatura digital que confirma que a comunicação teve origem no site verdadeiro. Isto autentica o servidor, evitando ataques on-path e falsificação de domínio. O MAC também garante que os dados não foram alterados em trânsito.
+	
+- Estabelecimento de Chaves Seguras
+	A chave pública contida no certificado do servidor é usada pelo cliente para criptografar o segredo pré-mestre durante o handshake, garantindo que apenas o servidor (que possui a chave privada correspondente) possa descriptografá-lo e participar do cálculo das chaves de sessão
+
+🚩 O que são Certificados Digitais SSL?
+
+	Um certificado SSL é um arquivo instalado no servidor de origem de um site. É simplesmente um arquivo de dados contendo a chave pública e a identidade do proprietário do site, juntamente com outras informações. Sem um certificado SSL, o tráfego de um site não pode ser criptografado com TLS.
+
+	Tecnicamente, qualquer proprietário de um site pode criar seu próprio certificado SSL, e esses certificados são chamados de certificados autoassinados. Entretanto, os navegadores não consideram os certificados autoassinados tão confiáveis quanto os certificados SSL emitidos por uma autoridade certificadora. 
+	Certificados digitais são arquivos eletrônicos que atuam como carteiras de identidade digitais para sites e servidores. Eles comprovam a identidade do servidor para o cliente e contêm informações importantes, como:
+
+Nome do proprietário do certificado (domínio do site).
+A chave pública do servidor.
+A identidade da Autoridade de Certificação (CA) que emitiu o certificado.
+A assinatura digital da CA, que garante a autenticidade do certificado.
+O período de validade do certificado.
+
+🚩 Tipos de Certificados SSL/TLS:
+
+Existem diferentes tipos de certificados, variando no nível de validação da identidade do proprietário:
+
+DV (Domain Validated): Valida apenas o controle do domínio. São os certificados mais básicos e geralmente emitidos rapidamente.
+OV (Organization Validated): Valida a organização proprietária do domínio. Requerem mais verificações do que os certificados DV.
+EV (Extended Validation): Fornecem o mais alto nível de confiança, com um processo de validação rigoroso da identidade da organização. Navegadores geralmente exibem indicadores visuais especiais para sites com certificados EV (por exemplo, o nome da organização na barra de endereços). Em resumo, TLS e certificados digitais são pilares da segurança online. O TLS fornece a criptografia, a autenticação e a integridade da comunicação, enquanto os certificados digitais garantem a identidade dos servidores e permitem o estabelecimento de chaves de criptografia seguras. Ao garantir que um site utiliza HTTPS com um certificado válido, os usuários podem ter maior confiança na segurança e privacidade de suas interações online.
